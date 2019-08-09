@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CardsList from './CardsList';
+import {InformationContext} from '../contexts/information-context'
 
 
-class Home extends Component {
-  state = {
-    information: 'some information'
-  
+const Home = () => {
+
+  return (
+    <InformationContext.Consumer>
+      {value => (
+
+        <div>
+          <p> Home component: {value.state.information} </p>
+          <CardsList />
+        </div>
+
+      )}
+    </InformationContext.Consumer>
+      
+  );
   }
 
-  render() {
-    const {information} = this.state
-    return (
-      <div>
-        <p> Home component: {this.state.information} </p>
-        <CardsList information= {information} />
-      </div>
-    )
-  }
-}
 
 export default Home;

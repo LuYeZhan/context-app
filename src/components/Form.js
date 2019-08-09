@@ -1,10 +1,10 @@
 import React from 'react'
 import Input from './Input'
 
-function Form(props) {
+function Form() {
   return (
     <div>
-      <Input information = {props.information} />
+      <Input/>
     </div>
   )
 }

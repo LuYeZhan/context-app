@@ -1,10 +1,24 @@
-import React from 'react'
+import React from 'react';
+import {InformationContext} from '../contexts/information-context';
 
-function Input(props) {
+function Input() {
   return (
-    <div>
-      <p>Input component: {props.information}</p>
-    </div>
+
+    <InformationContext.Consumer>
+      {value => (
+
+        <div>
+          <p>Input Component: {value.state.information}</p>
+          <input type='text' name='newInformation' onChange={
+            (event) => {
+              value.changeInformation(event.target.value);
+            }
+          } />
+        </div>
+
+      )}
+    </InformationContext.Consumer>
+
   )
 }
 

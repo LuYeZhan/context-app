@@ -1,10 +1,10 @@
 import React from 'react';
 import Form from './Form';
 
-function CardsList(props) {
+function CardsList() {
   return (
     <div>
-      <Form information = {props.information} />
+      <Form />
     </div>
   )
 }
